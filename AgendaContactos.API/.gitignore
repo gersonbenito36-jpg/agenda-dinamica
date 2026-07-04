@@ -1,0 +1,27 @@
+# === CONFIGURACIÓN PARA VUE.JS (FRONTEND) ===
+# Ignorar la carpeta de dependencias de Node
+agenda-contacto-frontend/node_modules/
+# Ignorar los archivos de compilación de producción de Vue
+agenda-contacto-frontend/dist/
+# Ignorar variables de entorno locales de Vue (si las usas)
+agenda-contacto-frontend/.env.local
+agenda-contacto-frontend/.env.*.local
+
+# === CONFIGURACIÓN PARA C# / .NET (BACKEND) ===
+# Ignorar carpetas de compilación y salida de C#
+AgendaContactos.API/bin/
+AgendaContactos.API/obj/
+# Ignorar archivos de configuración local que contienen credenciales accesibles
+AgendaContactos.API/appsettings.Development.json
+AgendaContactos.API/appsettings.Local.json
+AgendaContactos.API/appsettings.json
+
+# === CONFIGURACIÓN GENERAL ===
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+# Archivos de configuración de editores (VS Code / Visual Studio)
+.vscode/
+.vs/
+*.user
+*.suo
