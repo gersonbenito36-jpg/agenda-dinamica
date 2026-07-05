@@ -5,5 +5,4 @@ import home from './components/home.vue'
 
 <template>
     <home />
- 
 </template>
