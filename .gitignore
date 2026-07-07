@@ -33,6 +33,7 @@ agenda-contacto-frontend/.env.local
 AgendaContactos.API/bin/
 AgendaContactos.API/obj/
 AgendaContactos.API/appsettings.Development.json
+AgendaContactos.API/appsettings.json
 
 # === CONFIGURACIÓN GENERAL ===
 .vscode/

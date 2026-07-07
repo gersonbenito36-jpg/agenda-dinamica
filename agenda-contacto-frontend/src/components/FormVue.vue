@@ -1,17 +1,47 @@
 <script setup>
 import { ref } from 'vue';
+import { watch } from 'vue';
 import { crearContactos } from '../services/services.js';
+import { actualizarContactos} from '../services/services.js';
+
+const propiedades =defineProps({  //está vinculado con el watch
+    contacto: Object
+})
+
 const emit = defineEmits(['cerrar', 'contactoCreado'])
 const nombre = ref('')
 const telefono = ref('')
 const correo = ref('')
-const registrarContacto = async() =>{
-    const nuevoContacto = {
-        nombre: nombre.value, 
-        telefono: telefono.value,
-        correo: correo.value
+
+watch(() => propiedades.contacto, (nuevoContacto) => {
+    if (nuevoContacto){
+        nombre.value = nuevoContacto.nombre
+        telefono.value = nuevoContacto.telefono
+        correo.value = nuevoContacto.correo
+    } else{
+        nombre.value = ''
+        telefono.value = ''
+        correo.value = ''
     }
-    await crearContactos(nuevoContacto)
+}, {immediate : true })
+
+const registrarContacto = async() =>{
+    if (propiedades.contacto)  {
+        await actualizarContactos (propiedades.contacto.id, {
+            id: propiedades.contacto.id,
+            nombre: nombre.value, 
+            telefono: telefono.value,
+            correo: correo.value
+        })
+
+       
+    } else{
+        await crearContactos({
+            nombre: nombre.value,
+            telefono: telefono.value,
+            correo: correo.value
+        })
+    }
     emit('contactoCreado')
     emit('cerrar')
 }
