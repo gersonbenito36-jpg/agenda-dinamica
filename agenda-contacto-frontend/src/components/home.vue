@@ -43,10 +43,8 @@ onMounted(() =>{
       font-bold text-center">Bienvenido a tu Agenda de contactos</h1>
    </header>
    <div class="w-full bg-violet-300 p-6 flex flex-row justify-around flex gap-8 px-10">
-      <input type="text"
-      placeholder="type a name to search in this web"
-      name="search"
-      class="w-1/2  rounded-lg border-4 border-violet-900">
+      <input type="text" placeholder="type a name to search on this" name="search"
+      class="w-1/2  rounded-md border-2 border-violet-800 focus:outline-none focus:border-violet-600 p-2">
       <button type="button" @click="mostrarFormulario"
       class="bg-violet-900 text-white p-2 border-2 
       border-white px-6 rounded-xl hover:scale-110 transition-transform">
